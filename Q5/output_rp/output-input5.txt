@@ -1,18 +1,16 @@
 7
-B OR D
-A OR C OR E
--A OR D
--B OR C OR E
-C OR E OR -G
-E OR G
-D OR -F
-7
-D
-B OR C OR E
--A OR C OR E
-C OR E OR -F
-D OR E
-C OR D OR E
+A OR C OR -E
+C OR D
+B OR C
+A OR C OR D
+A OR E
+C OR -D
+A OR -B
+5
+C OR -E
+A OR C
 C OR E
+-B OR C
+C
 0
 NO

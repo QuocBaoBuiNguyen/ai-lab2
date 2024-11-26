@@ -13,8 +13,9 @@ class Resolution:
         for kb_clause in kb_clauses_arr:
             self.add_new_clause_to_kb(clauses, kb_clause)
 
-        alpha_negate_arr = self.negate_clause(alpha_statement)         
-        self.add_new_clause_to_kb(clauses, alpha_negate_arr)
+        alpha_negate_arr = self.negate_clause(alpha_statement)
+        for alpha_negate_clause in alpha_negate_arr:
+            self.add_new_clause_to_kb(clauses, alpha_negate_clause)
         
         result = []
         while True:
@@ -95,11 +96,11 @@ class Resolution:
         atom_arr = self.parse_cnf_clause(clause)
         res = []
         for atom in atom_arr:
-            res.append(self.negate_atom(atom))            
+            res.append([self.negate_atom(atom)])            
         return res
 
     def negate_atom(self, atom):
         if atom[0] == '-':
             return atom[1:]
         else:
-            return '-' + atom
+            return '-' + atom[0]
